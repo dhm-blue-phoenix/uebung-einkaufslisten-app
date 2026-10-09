@@ -1,5 +1,5 @@
 FROM node:24-alpine
 
-WORKDIR /devspace/frontend
+WORKDIR /workspace/frontend
 
 EXPOSE 4200
