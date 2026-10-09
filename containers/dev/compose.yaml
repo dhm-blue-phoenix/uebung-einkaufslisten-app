@@ -3,11 +3,11 @@ services:
     build:
       context: ../..
       dockerfile: containers/dev/frontend.Dockerfile
-    command: ["sh", "-c", "npm ci && npm run start -- --poll=1000"]
+    command: ["sh", "-c", "npm i && npm ci && npm run start -- --poll=1000"]
     volumes:
-      - ../../frontend:/devspace/frontend
-      - frontend-node-modules:/devspace/frontend/node_modules
-      - frontend-npm-cache:/root/.npm
+      - ../../frontend:/devspace/frontend:Z
+      - frontend-node-modules:/devspace/frontend/node_modules:Z
+      - frontend-npm-cache:/root/.npm:Z
     ports:
       - "1420:4200"
 
