@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "identifier": "com.blue.uebung-einkaufslisten-app",
   "build": {
-    "beforeDevCommand": "cd ../frontend && npm run start",
+    "beforeDevCommand": "",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "cd ../frontend && npm run build",
+    "beforeBuildCommand": "",
     "frontendDist": "../../frontend/dist/uebung-einkaufslisten-app/browser"
   },
   "app": {
