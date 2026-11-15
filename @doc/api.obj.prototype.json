@@ -1,0 +1,76 @@
+/* API PATH: '/..'
+
+Funktionen:
+  - Ein Produkt anlegen
+  - Produkt Informazionen Bearbeiten
+  - Produkt Löschen
+
+  - Suchfunktion
+
+  - Ein Produkt zur Liste Hinzufügen
+  - Ein Produkt aus der Liste Entfernen
+  - Den status eines Produktes oder einer Ganzen Liste als Gekauft Makieren
+  - Menge einse Produkts Festlegen
+
+  - Produkt Kategorien Erstellen
+  - Produkt Kategorien Bearbeiten
+  - Produkt Kategorien Entfernen
+*/
+
+// OBJ TYPES
+{
+  "opj_types": ["product", "product_list", "category", "categories"],
+  "obj_status": ["bought", "not_bought", "none"]
+}
+
+
+// Produkt | POST GET PATCH DELETE
+{
+  "obj_type": "product",
+  "id": " -string/uuid- ",
+  "created_at": " -string/date- ",
+  "edited_at": " -string/date- ",
+  "name": " -string- ",
+  "desc": " -string- ",
+}
+
+// Liste | POST GET PATCH DELETE
+{
+  "obj_type": "product_list",
+  "id": " -string/uuid- ",
+  "created_at": " -string/date- ",
+  "edited_at": " -string/date- ",
+  "name": " -string- ",
+  "products": [
+    {
+      "obj_type": "product",
+      "set": " -string/u64- ",
+      "status": "none",
+      // Product Ref
+      "id": " -string/uuid- ",
+      "name": " -string- "
+    }
+  ]
+}
+
+// Kategorien | GET
+{
+  "obj_type": "categories",
+  "names": [
+    {
+      "obj_type": "category",
+      // Product Ref
+      "id": " -string/uuid- ",
+      "name": " -string- "
+    }
+  ]
+}
+
+// Kategorie | POST GET PATCH DELETE
+{
+  "obj_type": "category",
+  "id": " -string/uuid- ",
+  "created_at": " -string/date- ",
+  "edited_at": " -string/date- ",
+  "name": " -string- "
+}

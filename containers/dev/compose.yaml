@@ -1,15 +1,15 @@
 services:
   frontend:
     build:
-      context: ../..
-      dockerfile: containers/dev/frontend.Dockerfile
-    command: ["sh", "-c", "npm i && npm ci && npm run start -- --poll=1000"]
+      context: .
+      dockerfile: frontend.Dockerfile
+    command: ["sh", "-c", "npm ci && npm run start -- --poll=1000"]
     volumes:
       - ../../frontend:/workspace/frontend:Z
       - frontend-node-modules:/workspace/frontend/node_modules:Z
       - frontend-npm-cache:/root/.npm:Z
     ports:
-      - "1420:4200"
+      - "1420:1420"
 
 volumes:
   frontend-node-modules:

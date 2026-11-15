@@ -1,0 +1,45 @@
+Projekt: Einkaufslisten-App
+
+Was machen wir?
+
+Wir entwickeln eine plattformübergreifende App / Website, mit der Benutzer digitale Einkaufslisten erstellen und verwalten können. Produkte können hinzugefügt, bearbeitet, abgehakt und wieder entfernt werden.
+
+Funktionen
+
+Einkaufslisten erstellen und löschen
+Produkte hinzufügen, bearbeiten und entfernen
+Produkte bzw. eine gesamte Liste als „gekauft“ markieren
+Menge und Einheit eines Produkts festlegen
+Produkte Kategorien zuordnen, z. B. Lebensmittel, Getränke, Haushalt etc.
+Produktsuche, damit man nicht jedes Mal durch die komplette Liste scrollen muss
+Mögliche Zusatzfunktionen
+
+Produkte sortieren und filtern
+Mehrere Einkaufslisten gleichzeitig verwalten
+Listen teilen, sodass mehrere Personen dieselbe Einkaufsliste bearbeiten können
+Synchronisation zwischen Geräten
+Benutzerkonten und Login
+Dark-/Light-Mode
+Responsives Design
+Offline-Nutzung mit späterer Synchronisation
+Plattformen
+
+iOS
+Android
+Windows
+Linux
+macOS
+Webbrowser
+Technologien
+
+Frontend
+
+Angular
+TypeScript
+HTML
+CSS / SCSS
+Backend
+
+Rust
+Axum
+Containerisierung
