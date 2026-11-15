@@ -1,16 +1,19 @@
-## Frontend starten
-
-Im Repository-Hauptverzeichnis:
+## Frontend-Abhängigkeiten installieren
 
 ```bash
-podman compose -f containers/dev/compose.yaml up --build
+cd frontend
+npm ci
+```
 
-podman compose -f containers/compose.dev.yaml logs -f
-podman compose -f containers/compose.dev.yaml logs -f frontend
+Zum separaten Starten des Frontends im Browser:
+
+```bash
+cd frontend
+npm start
 ```
 
 Der Server ist unter `http://localhost:1420` erreichbar. Änderungen im Ordner
-`frontend` werden in den Container synchronisiert und von Angular erkannt.
+`frontend` werden von Angular erkannt.
 
 ## Tauri-Desktop-App starten
 
@@ -20,23 +23,13 @@ Die Tauri-Rust-CLI einmalig installieren:
 cargo install tauri-cli --version "^2"
 ```
 
-Den Frontend-Container weiterlaufen lassen und in einem zweiten Terminal
-ausführen:
-
 ```bash
 cd app
-cargo tauri dev --config src-tauri/tauri.container.conf.json
+cargo tauri dev
 ```
 
-Die zusätzliche Tauri-Konfiguration deaktiviert den lokalen
-`beforeDevCommand`. Tauri startet daher kein zweites Frontend auf dem Host,
-sondern verwendet den laufenden Dev-Server unter `http://localhost:1420`.
-Rust-Codeänderungen werden weiterhin von Tauri neu gebaut; Änderungen am
-Frontend werden vom Container-Dev-Server geladen.
+Tauri startet den Frontend-Dev-Server über den lokalen `beforeDevCommand`.
+Rust- und Frontend-Codeänderungen werden während der Entwicklung erkannt.
+Das Frontend nicht vorher separat mit `npm start` starten.
 
-Frontend und Tauri mit `Ctrl+C` in ihren jeweiligen Terminals beenden. Der
-Container kann alternativ im Repository-Hauptverzeichnis gestoppt werden:
-
-```bash
-podman compose -f containers/dev/compose.yaml down
-```
+Tauri und den Frontend-Dev-Server mit `Ctrl+C` beenden.

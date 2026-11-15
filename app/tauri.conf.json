@@ -4,9 +4,17 @@
   "version": "0.1.0",
   "identifier": "com.blue.uebung-einkaufslisten-app",
   "build": {
-    "beforeDevCommand": "podman compose -f containers/dev/compose.yaml up --build frontend",
+    "beforeDevCommand": {
+      "script": "npm run start",
+      "cwd": "../frontend",
+      "wait": false
+    },
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "podman compose -f containers/dev/compose.yaml build frontend && podman compose -f containers/dev/compose.yaml run --rm --no-deps -T -e NG_CLI_ANALYTICS=false frontend sh -c 'npm ci && npm run build'",
+    "beforeBuildCommand": {
+      "script": "npm ci && npm run build",
+      "cwd": "../frontend",
+      "wait": true
+    },
     "frontendDist": "../frontend/dist/uebung-einkaufslisten-app/browser"
   },
   "app": {
